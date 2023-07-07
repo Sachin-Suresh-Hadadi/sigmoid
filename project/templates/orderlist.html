@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Orders</h1>
+    <table border>
+        {% csrf_token %}
+        <tr>
+            <th>EID</th>
+            <th>NAME</th>
+            <th>ORDER</th>
+            <th>UPDATE</th>
+        </tr>
+        {% for item in result.order %}
+        <tr>
+            <th>{{item.eid}}</th>
+            <th>{{item.name}}</th>
+            <th>{{item.order}}</th>
+            <th>
+                <form action="orderlist" method="POST">
+                    {%csrf_token%}
+                    <button type="submit" name="done" value={{item.name}}>DONE</button>
+                </form>
+            </th>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url '' %}"><button>Order Page</button></a>
+</body>
+</html>

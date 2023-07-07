@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <form action="conferm"  method="post">
+        {%csrf_token%}
+        ENTER EMPLOYEE ID : <input type="text" name="EID">
+        ENTER THE EMAIL   : <input type="email" name="NAME" placeholder="Please enter valid mail id">
+        <label for="a">YOUR ORDER PLEASE :</label>
+        <select name="ORDER" id="a">
+            <option value="option" selected>Select From Below</option>
+            <option value="Breadjam">Breadjam</option>
+            <option value="Breadomlet">Bread Omlet</option>
+            <option value="Bread Butter">Bread Butter</option>
+            <option value="Poha">Poha</option>
+            <option value="yippe">Yippee</option>
+            <option value="maggie">Maggie</option>
+            <option value="Boiled">Boiled egg</option>
+        </select>
+        <button type="submit" name="ConfermOrder">ORDER</button>
+    </form>
+    <a href="{% url 'orderlist' %}"><button>Orderlist</button></a>
+</body>
+</html>
