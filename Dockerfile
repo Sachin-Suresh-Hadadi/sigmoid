@@ -5,3 +5,4 @@ COPY ./project/requirements.txt requirements.txt
 RUN  pip3 install -r requirements.txt
 COPY . .
 ENTRYPOINT ["python3", "./project/manage.py", "runserver", "0.0.0.0:8000"]
+EXPOSE 8000

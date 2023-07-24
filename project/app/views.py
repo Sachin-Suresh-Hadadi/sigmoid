@@ -23,13 +23,13 @@ def orderlist(request):
 
         email=(request.POST)['done']
 
-        From=os.getenv('FROM')
+        From='sachin.hs@sigmoidanalytics.com'
         To=email
-        password=os.getenv('PASSWORD')
+        password='vdxplxkzugyaktak'
         #
 
         em=EmailMessage()
-        em['From']=os.getenv('FROM')
+        em['From']='sachin.hs@sigmoidanalytics.com'
         em['To']=email
         em['Subject']="Order Status"
         em.set_content('your order has been done \n Please collect it from the counter \n')
