@@ -19,5 +19,5 @@ steps:
 
 - script: |
       az acr create --name sachinregistry --resource-group sigmoidrg --sku Standard
-      az acr login --name sachinregistry
+      az acr login --name sachinregistry --expose-token
   displayName: 'build and push to ACR'
