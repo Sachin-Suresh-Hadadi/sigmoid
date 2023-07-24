@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: sigmoid-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+       app: sig-app
+  template:
+    metadata:
+      name: sachin-sigmoid
+      labels:
+       app: sig-app
+    spec:
+     containers:
+      - name: sachin-containers
+        image: sachinhadadi/sigmoid:latest
+        ports:
+         - containerPort: 8000
