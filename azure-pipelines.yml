@@ -26,3 +26,10 @@ steps:
       docker tag mcr.microsoft.com/hello-world sachinregistry.azurecr.io/hello-world:v1
       docker push sachinregistry.azurecr.io/hello-world:v1
   displayName: 'build and push to ACR'
+- script: |
+      az aks create -g sigmoidrg -n sachinscluster --enable-managed-identity --node-count 1 --enable-addons monitoring --generate-ssh-keys
+      az aks get-credentials --resource-group sigmoidrg -n sachinscluster
+      kubectl apply -f kube/
+      kubectl get deployments
+      kunectl get services
+   displayName: 'logging into aks'
