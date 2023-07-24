@@ -9,7 +9,7 @@ trigger:
 pool: 'Default'
 
 variables:
-   - group: sachin
+   - group: sigmoidapp
 
 steps:
 - script: | 
