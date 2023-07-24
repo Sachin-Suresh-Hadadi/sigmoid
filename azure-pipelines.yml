@@ -18,6 +18,6 @@ steps:
   displayName: 'logging into azure portal'
 
 - script: |
-      az acr create --resource-group sigmoidrg --name ${RegisterName} --sku Basic
+      az acr create --name ${RegisterName} --resource-group sigmoidrg --sku Standard
       az acr login --name ${RegisterName}
   displayName: 'build and push to ACR'
