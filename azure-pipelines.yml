@@ -14,8 +14,10 @@ variables:
 steps:
 - script: | 
       az login -u ${UserName} -p ${Password} 
-      az group list
+      az group create --name sigmoidrg --location eastus
   displayName: 'logging into azure portal'
 
-- script: 
-  displayName: 'Run a multi-line script'
+- script: |
+      az acr create --resource-group sigmoidrg --name ${RegisterName} --sku Basic
+      az acr login --name ${RegisterName}
+  displayName: 'build and push to ACR'
