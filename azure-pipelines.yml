@@ -20,6 +20,9 @@ steps:
 - script: |
       az acr create --name sachinregistry --resource-group sigmoidrg --sku Standard
       az acr login --name sachinregistry --expose-token
-      docker build . -f Dockerfile -t sachinregistry/sigmoidapp:latest && sleep 10
-      docker push sachinregistry.azurecr.io/sigmoidapp:latest
+      #docker build . -f Dockerfile -t sachinregistry/sigmoidapp:latest && sleep 10
+      #docker push sachinregistry.azurecr.io/sigmoidapp:latest
+      docker pull mcr.microsoft.com/hello-world
+      docker tag mcr.microsoft.com/hello-world sachinregistry.azurecr.io/hello-world:v1
+      docker push sachinregistry.azurecr.io/hello-world:v1
   displayName: 'build and push to ACR'
