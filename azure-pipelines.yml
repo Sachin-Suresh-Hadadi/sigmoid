@@ -8,11 +8,14 @@ trigger:
 
 pool: 'Default'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+   - group: sachin
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
+steps:
+- script: | 
+      az login -u ${UserName} -p ${Password} 
+      az group list
+  displayName: 'logging into azure portal'
+
+- script: 
   displayName: 'Run a multi-line script'
