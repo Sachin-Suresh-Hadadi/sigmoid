@@ -15,6 +15,6 @@ spec:
     spec:
      containers:
       - name: sachin-containers
-        image: sachinregistry.azurecr.io/nginx:latest
+        image: sachinregistry.azurecr.io/sigmoidapp:latest
         ports:
          - containerPort: 80
