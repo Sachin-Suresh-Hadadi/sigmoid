@@ -20,11 +20,11 @@ steps:
 - script: |
       az acr create --name sachinregistry --resource-group sigmoidrg --sku Standard
       az acr login --name sachinregistry 
-      docker build . -f Dockerfile -t sachinregistry.azurecr.io/sigmoidapp:latest && sleep 10
-      docker push sachinregistry.azurecr.io/sigmoidapp:latest
-      #docker pull mcr.microsoft.com/hello-world
-      #docker tag mcr.microsoft.com/hello-world sachinregistry.azurecr.io/hello-world:latest
-      #docker push sachinregistry.azurecr.io/hello-world:latest
+      #docker build . -f Dockerfile -t sachinregistry.azurecr.io/sigmoidapp:latest && sleep 10
+      #docker push sachinregistry.azurecr.io/sigmoidapp:latest
+      docker pull sachinhadadi/nginx:v2
+      docker tag  sachinhadadi/nginx:v2 sachinregistry.azurecr.io/nginx:latest
+      docker push sachinregistry.azurecr.io/nginx:latest
   displayName: 'build and push to ACR'
 - script: |
       #az aks create -g sigmoidrg -n sachinscluster --enable-managed-identity --node-count 1 --enable-addons monitoring --generate-ssh-keys
