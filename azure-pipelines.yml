@@ -31,5 +31,5 @@ steps:
       #az aks get-credentials --resource-group sigmoidrg -n sachinscluster
       kubectl apply -f kube/
       kubectl get deployments
-      kunectl get services
+      kubectl get services
   displayName: 'deploy to aks cluster'
