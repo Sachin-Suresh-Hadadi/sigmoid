@@ -15,6 +15,6 @@ spec:
     spec:
      containers:
       - name: sachin-containers
-        image: sachinregistry.azurecr.io/sigmoidapp:${GIT_COMMIT} 
+        image: sachinregistry.azurecr.io/sigmoidapp:latest 
         ports:
          - containerPort: 8000
