@@ -27,8 +27,8 @@ steps:
       docker push sachinregistry.azurecr.io/nginx:latest
   displayName: 'build and push to ACR'
 - script: |
-      #az aks create -g sigmoidrg -n sachinscluster --enable-managed-identity --node-count 1 --enable-addons monitoring --generate-ssh-keys
-      #az aks get-credentials --resource-group sigmoidrg -n sachinscluster
+      az aks create -g sigmoidrg -n sachinscluster --enable-managed-identity --node-count 1 --enable-addons monitoring --generate-ssh-keys
+      az aks get-credentials --resource-group sigmoidrg -n sachinscluster
       kubectl apply -f kube/
       kubectl get deployments
       kubectl get services
