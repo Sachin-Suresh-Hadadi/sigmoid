@@ -32,4 +32,4 @@ steps:
       kubectl apply -f kube/
       kubectl get deployments
       kubectl get services
-  displayName: 'deploy to aks cluster'
+  displayName: 'deploying to aks cluster'
