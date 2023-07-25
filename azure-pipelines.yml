@@ -20,8 +20,8 @@ steps:
 - script: |
       az acr create --name sachinregistry --resource-group sigmoidrg --sku Standard
       az acr login --name sachinregistry 
-      docker build . -f Dockerfile -t sachinregistry.azurecr.io/sigmoidapp:latest && sleep 10
-      docker push sachinregistry.azurecr.io/sigmoidapp:latest
+      docker build . -f Dockerfile -t sachinregistry.azurecr.io/sigmoidapp:${GIT_COMMIT} && sleep 10
+      docker push sachinregistry.azurecr.io/sigmoidapp:${GIT_COMMIT} 
   displayName: 'build and push to ACR'
 - script: |
       az aks create -g sigmoidrg -n sachinscluster --node-count 1 --generate-ssh-keys --attach-acr sachinregistry
